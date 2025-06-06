@@ -6,8 +6,9 @@ class Dictionary:
     def __init__(self) -> None:
         self.capacity: int = 8
         self.size: int = 0
-        self.table: list[list[tuple[Hashable, Any]]]\
-            = [[] for _ in range(self.capacity)]
+        self.table: (
+            list)
+        [list[tuple[Hashable, Any]]] = [[] for _ in range(self.capacity)]
 
     def __setitem__(self, key: Hashable, value: Any) -> None:
         index = hash(key) % self.capacity
